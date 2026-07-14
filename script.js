@@ -30,7 +30,20 @@ function playRound(userChoice, computerChoice) {
     }
 
 }
-const userSelection = getUserChoice();
-const computerSelection = getComputerChoice();
 
-playRound(userSelection, computerSelection);
+function playGame() {
+    for (let i = 0; i < 5; i++) {
+        const userSelection = getUserChoice();
+        const computerSelection = getComputerChoice();
+        playRound(userSelection, computerSelection);
+    }
+    if (humanscore > computerscore) {
+        console.log(`You won the game! Final score: You ${humanscore} - Computer ${computerscore}`);
+    }
+    else if (humanscore < computerscore) {
+        console.log(`You lost the game! Final score: You ${humanscore} - Computer ${computerscore}`);
+    }
+    else {
+        console.log(`The game is a tie! Final score: You ${humanscore} - Computer ${computerscore}`);
+    }
+}
