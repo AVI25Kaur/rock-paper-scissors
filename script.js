@@ -5,8 +5,6 @@ function getComputerChoice() {
 }
 console.log(getComputerChoice());
 
-
-
 let humanscore = 0;
 let computerscore = 0;
 
@@ -26,4 +24,22 @@ function playRound(userChoice, computerChoice) {
     }
 
 }
+
+document.getElementById('rock').addEventListener('click', function() {
+    const computerChoice = getComputerChoice();
+    playRound('rock', computerChoice);
+    document.getElementById('result').textContent = `You chose Rock. Computer chose ${computerChoice}. Score: You ${humanscore} - Computer ${computerscore}`;
+} );
+
+document.getElementById('paper').addEventListener('click', function() {
+    const computerChoice = getComputerChoice();
+    playRound('paper', computerChoice);
+    document.getElementById('result').textContent = `You chose Paper. Computer chose ${computerChoice}. Score: You ${humanscore} - Computer ${computerscore}`;
+}); 
+
+document.getElementById('scissors').addEventListener('click', function() {
+    const computerChoice = getComputerChoice();
+    playRound('scissors', computerChoice);
+    document.getElementById('result').textContent = `You chose Scissors. Computer chose ${computerChoice}. Score: You ${humanscore} - Computer ${computerscore}`;
+});
 
